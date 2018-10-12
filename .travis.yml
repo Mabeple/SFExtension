@@ -12,11 +12,11 @@ env:
   # - ACTION=test  PLATFORM=Mac     DESTINATION='platform=OS X'
   # - ACTION=test  PLATFORM=iOS     DESTINATION='platform=iOS Simulator,name=iPhone X'
   # - ACTION=test  PLATFORM=tvOS    DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p'
-before_install:
-  - bundle install
-  - gem install cocoapods --pre
-  - brew update
-  - brew outdated xctool || brew upgrade xctool
+# before_install:
+#   - bundle install
+#   - gem install cocoapods --pre
+#   - brew update
+#   - brew outdated xctool || brew upgrade xctool
 script:
   - set -o pipefail 
   - swift --version
@@ -27,5 +27,5 @@ script:
   - bash <(curl -s https://codecov.io/bash) -cF tvos -J 'SwifterSwift'
   - xcodebuild clean build test -project "$PROJECT" -scheme "$MACOS_SCHEME" -destination "$MACOS_DESTINATION" | XCPRETTY_JSON_FILE_OUTPUT="xcodebuild-macos.json" xcpretty -f `xcpretty-json-formatter`
   
-  - bundle exec danger --verbose
-  - pod lib lint
+  # - bundle exec danger --verbose
+  # - pod lib lint
