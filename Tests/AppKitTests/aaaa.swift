@@ -19,8 +19,6 @@ final class aaaaTests: XCTestCase {
         view.borderWidth = 5
         XCTAssertEqual(view.borderWidth, 5)
         
-        view.borderWidth = 5
-        XCTAssertNotEqual(view.borderWidth, 5)
     }
     
 }
