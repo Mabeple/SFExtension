@@ -12,7 +12,18 @@
 		771F0AAF21709E7C00B894B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 771F0AAD21709E7C00B894B1 /* Main.storyboard */; };
 		771F0AB121709E7D00B894B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 771F0AB021709E7D00B894B1 /* Assets.xcassets */; };
 		771F0AB421709E7D00B894B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 771F0AB221709E7D00B894B1 /* LaunchScreen.storyboard */; };
+		771F0AC22170AF8400B894B1 /* SFExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771F0AC12170AF8400B894B1 /* SFExtensionTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		771F0AC42170AF8500B894B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 771F0A9E21709E7C00B894B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 771F0AA521709E7C00B894B1;
+			remoteInfo = SFExtension;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		771F0AA621709E7C00B894B1 /* SFExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +33,20 @@
 		771F0AB021709E7D00B894B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		771F0AB321709E7D00B894B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		771F0AB521709E7D00B894B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		771F0ABF2170AF8400B894B1 /* SFExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SFExtensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		771F0AC12170AF8400B894B1 /* SFExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFExtensionTests.swift; sourceTree = "<group>"; };
+		771F0AC32170AF8500B894B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		771F0AA321709E7C00B894B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		771F0ABC2170AF8400B894B1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				771F0AA821709E7C00B894B1 /* SFExtension */,
+				771F0AC02170AF8400B894B1 /* SFExtensionTests */,
 				771F0AA721709E7C00B894B1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				771F0AA621709E7C00B894B1 /* SFExtension.app */,
+				771F0ABF2170AF8400B894B1 /* SFExtensionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +85,15 @@
 				771F0AB521709E7D00B894B1 /* Info.plist */,
 			);
 			path = SFExtension;
+			sourceTree = "<group>";
+		};
+		771F0AC02170AF8400B894B1 /* SFExtensionTests */ = {
+			isa = PBXGroup;
+			children = (
+				771F0AC12170AF8400B894B1 /* SFExtensionTests.swift */,
+				771F0AC32170AF8500B894B1 /* Info.plist */,
+			);
+			path = SFExtensionTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +116,24 @@
 			productReference = 771F0AA621709E7C00B894B1 /* SFExtension.app */;
 			productType = "com.apple.product-type.application";
 		};
+		771F0ABE2170AF8400B894B1 /* SFExtensionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 771F0AC82170AF8500B894B1 /* Build configuration list for PBXNativeTarget "SFExtensionTests" */;
+			buildPhases = (
+				771F0ABB2170AF8400B894B1 /* Sources */,
+				771F0ABC2170AF8400B894B1 /* Frameworks */,
+				771F0ABD2170AF8400B894B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				771F0AC52170AF8500B894B1 /* PBXTargetDependency */,
+			);
+			name = SFExtensionTests;
+			productName = SFExtensionTests;
+			productReference = 771F0ABF2170AF8400B894B1 /* SFExtensionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,6 +146,10 @@
 				TargetAttributes = {
 					771F0AA521709E7C00B894B1 = {
 						CreatedOnToolsVersion = 10.0;
+					};
+					771F0ABE2170AF8400B894B1 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 771F0AA521709E7C00B894B1;
 					};
 				};
 			};
@@ -113,6 +167,7 @@
 			projectRoot = "";
 			targets = (
 				771F0AA521709E7C00B894B1 /* SFExtension */,
+				771F0ABE2170AF8400B894B1 /* SFExtensionTests */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +183,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		771F0ABD2170AF8400B894B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,7 +202,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		771F0ABB2170AF8400B894B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				771F0AC22170AF8400B894B1 /* SFExtensionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		771F0AC52170AF8500B894B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 771F0AA521709E7C00B894B1 /* SFExtension */;
+			targetProxy = 771F0AC42170AF8500B894B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		771F0AAD21709E7C00B894B1 /* Main.storyboard */ = {
@@ -312,6 +390,44 @@
 			};
 			name = Release;
 		};
+		771F0AC62170AF8500B894B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SFExtensionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmapu.SFExtensionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SFExtension.app/SFExtension";
+			};
+			name = Debug;
+		};
+		771F0AC72170AF8500B894B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SFExtensionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmapu.SFExtensionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SFExtension.app/SFExtension";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -329,6 +445,15 @@
 			buildConfigurations = (
 				771F0AB921709E7D00B894B1 /* Debug */,
 				771F0ABA21709E7D00B894B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		771F0AC82170AF8500B894B1 /* Build configuration list for PBXNativeTarget "SFExtensionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				771F0AC62170AF8500B894B1 /* Debug */,
+				771F0AC72170AF8500B894B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
