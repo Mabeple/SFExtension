@@ -26,7 +26,7 @@ script:
 
 
   - xcodebuild clean build test -project "$PROJECT" -scheme "$MACOS_SCHEME" -destination "$MACOS_DESTINATION" | XCPRETTY_JSON_FILE_OUTPUT="xcodebuild-macos.json" xcpretty -f `xcpretty-json-formatter`
-  - bash <(curl -s https://codecov.io/bash) -cF osx -J 'SwifterSwift'
+  - bash <(curl -s https://codecov.io/bash) -cF osx -J 'SFExtension'
 
   
   # - bundle exec danger --verbose
