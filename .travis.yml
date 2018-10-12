@@ -2,10 +2,30 @@ language: objective-c
 osx_image: xcode10
 
 env:
-  # - ACTION=test  PLATFORM=Mac     DESTINATION='platform=OS X'
-  - ACTION=test  PLATFORM=iOS     DESTINATION='platform=iOS Simulator,name=iPhone X'
-  # - ACTION=test  PLATFORM=tvOS    DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p'
+  global:
+    - PROJECT='SFExtension.xcodeproj'
+    - IOS_SCHEME='SFExtension-iOS'
+    - MACOS_SCHEME='SFExtension-macOS'
+    - IOS_DESTINATION='platform=iOS Simulator,name=iPhone X'
+    - MACOS_DESTINATION='platform=OS X'
 
+  # - ACTION=test  PLATFORM=Mac     DESTINATION='platform=OS X'
+  # - ACTION=test  PLATFORM=iOS     DESTINATION='platform=iOS Simulator,name=iPhone X'
+  # - ACTION=test  PLATFORM=tvOS    DESTINATION='platform=tvOS Simulator,name=Apple TV 1080p'
+before_install:
+  - bundle install
+  - gem install cocoapods --pre
+  - brew update
+  - brew outdated xctool || brew upgrade xctool
 script:
   - set -o pipefail 
-  - xcodebuild -scheme SFExtension -destination "$DESTINATION" $ACTION | xcpretty
+  - swift --version
+  
+  - xcodebuild clean build test -project "$PROJECT" -scheme "$IOS_SCHEME" -destination "$IOS_DESTINATION" | XCPRETTY_JSON_FILE_OUTPUT="xcodebuild-ios.json" xcpretty -f `xcpretty-json-formatter`
+
+
+  - bash <(curl -s https://codecov.io/bash) -cF tvos -J 'SwifterSwift'
+  - xcodebuild clean build test -project "$PROJECT" -scheme "$MACOS_SCHEME" -destination "$MACOS_DESTINATION" | XCPRETTY_JSON_FILE_OUTPUT="xcodebuild-macos.json" xcpretty -f `xcpretty-json-formatter`
+  
+  - bundle exec danger --verbose
+  - pod lib lint
