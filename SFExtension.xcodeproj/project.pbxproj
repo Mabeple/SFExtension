@@ -12,7 +12,10 @@
 		013395AC217128BD000A47FE /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013395AB217128BD000A47FE /* UIViewExtensions.swift */; };
 		013395C721712B63000A47FE /* SFExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01339557217125B4000A47FE /* SFExtension.framework */; };
 		013395D02171325C000A47FE /* UIViewTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013395CF2171325C000A47FE /* UIViewTexts.swift */; };
-		013395DA217132AC000A47FE /* SFExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01339564217125C5000A47FE /* SFExtension.framework */; };
+		013395E221713DAE000A47FE /* NSViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013395E121713DAE000A47FE /* NSViewExtensions.swift */; };
+		013395ED21713E5A000A47FE /* SFExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01339564217125C5000A47FE /* SFExtension.framework */; };
+		013395F521713EEC000A47FE /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013395F421713EEC000A47FE /* File.swift */; };
+		013395F721713F87000A47FE /* aaaa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013395F621713F87000A47FE /* aaaa.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +26,7 @@
 			remoteGlobalIDString = 01339556217125B4000A47FE;
 			remoteInfo = "SFExtension-iOS";
 		};
-		013395DB217132AC000A47FE /* PBXContainerItemProxy */ = {
+		013395EE21713E5A000A47FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 771F0A9E21709E7C00B894B1 /* Project object */;
 			proxyType = 1;
@@ -41,7 +44,10 @@
 		013395B62171299C000A47FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		013395C221712B63000A47FE /* SFExtension-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SFExtension-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		013395CF2171325C000A47FE /* UIViewTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewTexts.swift; sourceTree = "<group>"; };
-		013395D5217132AC000A47FE /* SFExtension-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SFExtension-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		013395E121713DAE000A47FE /* NSViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSViewExtensions.swift; sourceTree = "<group>"; };
+		013395E821713E5A000A47FE /* SFExtension-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SFExtension-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		013395F421713EEC000A47FE /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		013395F621713F87000A47FE /* aaaa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aaaa.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +73,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		013395D2217132AC000A47FE /* Frameworks */ = {
+		013395E521713E5A000A47FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				013395DA217132AC000A47FE /* SFExtension.framework in Frameworks */,
+				013395ED21713E5A000A47FE /* SFExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +97,7 @@
 		013395A921712802000A47FE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				013395E021713D71000A47FE /* AppKit */,
 				013395AA2171282B000A47FE /* UIKit */,
 			);
 			path = Extensions;
@@ -107,18 +114,36 @@
 		013395AD21712956000A47FE /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				013395BD21712A3B000A47FE /* UIKit */,
+				013395E321713E02000A47FE /* AppKitTests */,
+				013395BD21712A3B000A47FE /* UIKitTests */,
 				013395B62171299C000A47FE /* Info.plist */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		013395BD21712A3B000A47FE /* UIKit */ = {
+		013395BD21712A3B000A47FE /* UIKitTests */ = {
 			isa = PBXGroup;
 			children = (
 				013395CF2171325C000A47FE /* UIViewTexts.swift */,
 			);
-			path = UIKit;
+			path = UIKitTests;
+			sourceTree = "<group>";
+		};
+		013395E021713D71000A47FE /* AppKit */ = {
+			isa = PBXGroup;
+			children = (
+				013395E121713DAE000A47FE /* NSViewExtensions.swift */,
+			);
+			path = AppKit;
+			sourceTree = "<group>";
+		};
+		013395E321713E02000A47FE /* AppKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				013395F421713EEC000A47FE /* File.swift */,
+				013395F621713F87000A47FE /* aaaa.swift */,
+			);
+			path = AppKitTests;
 			sourceTree = "<group>";
 		};
 		771F0A9D21709E7C00B894B1 = {
@@ -136,7 +161,7 @@
 				01339557217125B4000A47FE /* SFExtension.framework */,
 				01339564217125C5000A47FE /* SFExtension.framework */,
 				013395C221712B63000A47FE /* SFExtension-iOSTests.xctest */,
-				013395D5217132AC000A47FE /* SFExtension-macOSTests.xctest */,
+				013395E821713E5A000A47FE /* SFExtension-macOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -217,22 +242,22 @@
 			productReference = 013395C221712B63000A47FE /* SFExtension-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		013395D4217132AC000A47FE /* SFExtension-macOSTests */ = {
+		013395E721713E5A000A47FE /* SFExtension-macOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 013395DD217132AC000A47FE /* Build configuration list for PBXNativeTarget "SFExtension-macOSTests" */;
+			buildConfigurationList = 013395F021713E5A000A47FE /* Build configuration list for PBXNativeTarget "SFExtension-macOSTests" */;
 			buildPhases = (
-				013395D1217132AC000A47FE /* Sources */,
-				013395D2217132AC000A47FE /* Frameworks */,
-				013395D3217132AC000A47FE /* Resources */,
+				013395E421713E5A000A47FE /* Sources */,
+				013395E521713E5A000A47FE /* Frameworks */,
+				013395E621713E5A000A47FE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				013395DC217132AC000A47FE /* PBXTargetDependency */,
+				013395EF21713E5A000A47FE /* PBXTargetDependency */,
 			);
 			name = "SFExtension-macOSTests";
 			productName = "SFExtension-macOSTests";
-			productReference = 013395D5217132AC000A47FE /* SFExtension-macOSTests.xctest */;
+			productReference = 013395E821713E5A000A47FE /* SFExtension-macOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -252,14 +277,16 @@
 					};
 					01339563217125C5000A47FE = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					013395C121712B63000A47FE = {
 						CreatedOnToolsVersion = 10.0;
 						ProvisioningStyle = Automatic;
 					};
-					013395D4217132AC000A47FE = {
+					013395E721713E5A000A47FE = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -280,7 +307,7 @@
 				01339556217125B4000A47FE /* SFExtension-iOS */,
 				01339563217125C5000A47FE /* SFExtension-macOS */,
 				013395C121712B63000A47FE /* SFExtension-iOSTests */,
-				013395D4217132AC000A47FE /* SFExtension-macOSTests */,
+				013395E721713E5A000A47FE /* SFExtension-macOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -307,7 +334,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		013395D3217132AC000A47FE /* Resources */ = {
+		013395E621713E5A000A47FE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -329,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				013395E221713DAE000A47FE /* NSViewExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,10 +368,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		013395D1217132AC000A47FE /* Sources */ = {
+		013395E421713E5A000A47FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				013395F521713EEC000A47FE /* File.swift in Sources */,
+				013395F721713F87000A47FE /* aaaa.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,10 +385,10 @@
 			target = 01339556217125B4000A47FE /* SFExtension-iOS */;
 			targetProxy = 013395C821712B63000A47FE /* PBXContainerItemProxy */;
 		};
-		013395DC217132AC000A47FE /* PBXTargetDependency */ = {
+		013395EF21713E5A000A47FE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 01339563217125C5000A47FE /* SFExtension-macOS */;
-			targetProxy = 013395DB217132AC000A47FE /* PBXContainerItemProxy */;
+			targetProxy = 013395EE21713E5A000A47FE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -417,6 +447,7 @@
 		0133956A217125C5000A47FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -434,6 +465,7 @@
 				PRODUCT_NAME = SFExtension;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -443,6 +475,7 @@
 		0133956B217125C5000A47FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -496,34 +529,39 @@
 			};
 			name = Release;
 		};
-		013395DE217132AC000A47FE /* Debug */ = {
+		013395F121713E5A000A47FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cmapu.SFExtension-macOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
-		013395DF217132AC000A47FE /* Release */ = {
+		013395F221713E5A000A47FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cmapu.SFExtension-macOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
@@ -675,11 +713,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		013395DD217132AC000A47FE /* Build configuration list for PBXNativeTarget "SFExtension-macOSTests" */ = {
+		013395F021713E5A000A47FE /* Build configuration list for PBXNativeTarget "SFExtension-macOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				013395DE217132AC000A47FE /* Debug */,
-				013395DF217132AC000A47FE /* Release */,
+				013395F121713E5A000A47FE /* Debug */,
+				013395F221713E5A000A47FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
