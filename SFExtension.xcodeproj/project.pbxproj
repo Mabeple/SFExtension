@@ -112,6 +112,7 @@
 		013395AD21712956000A47FE /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				77DF70232174390800936477 /* ResourcesTests */,
 				013395E321713E02000A47FE /* AppKitTests */,
 				013395BD21712A3B000A47FE /* UIKitTests */,
 				013395B62171299C000A47FE /* Info.plist */,
@@ -161,6 +162,13 @@
 				013395E821713E5A000A47FE /* SFExtension-macOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		77DF70232174390800936477 /* ResourcesTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ResourcesTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
