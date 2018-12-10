@@ -224,5 +224,12 @@ final class UIViewExtensionsTests: XCTestCase {
         XCTAssertEqual(view.shadowOffset, CGSize.zero)
         XCTAssertEqual(view.shadowOpacity, 0.5)
     }
+    
+    func testLoadFromNib() {
+        let bundle = Bundle.init(for: UIViewExtensionsTests.self)
+        let view = UIView.loadFromNib(named: "UIView", bundle: bundle)
+        XCTAssertNotNil(view)
+        XCTAssertEqual(view?.tag, 1000)
+    }
 }
 #endif
