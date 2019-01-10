@@ -729,3 +729,107 @@ public extension String {
     
 }
 #endif
+
+#if canImport(Foundation) && canImport(CommonCrypto)
+import CommonCrypto
+import Foundation
+// MARK:- Crypto Algorithm
+public enum CryptoAlgorithm {
+    case md5, sha1, sha224, sha256, sha384, sha512
+    
+    public var hmacAlgorithm: CCHmacAlgorithm {
+        var result: Int = 0
+        switch self {
+        case .md5:      result = kCCHmacAlgMD5
+        case .sha1:     result = kCCHmacAlgSHA1
+        case .sha224:   result = kCCHmacAlgSHA224
+        case .sha256:   result = kCCHmacAlgSHA256
+        case .sha384:   result = kCCHmacAlgSHA384
+        case .sha512:   result = kCCHmacAlgSHA512
+        }
+        return CCHmacAlgorithm(result)
+    }
+    
+    public var digestLength: Int {
+        var result: Int32 = 0
+        switch self {
+        case .md5:      result = CC_MD5_DIGEST_LENGTH
+        case .sha1:     result = CC_SHA1_DIGEST_LENGTH
+        case .sha224:   result = CC_SHA224_DIGEST_LENGTH
+        case .sha256:   result = CC_SHA256_DIGEST_LENGTH
+        case .sha384:   result = CC_SHA384_DIGEST_LENGTH
+        case .sha512:   result = CC_SHA512_DIGEST_LENGTH
+        }
+        return Int(result)
+    }
+}
+
+extension String {
+    
+    public var sha1: String {
+        return self.string(.sha1)
+    }
+    
+    public var sha224: String {
+        return self.string(.sha224)
+    }
+    
+    public var sha256: String {
+        return self.string(.sha256)
+    }
+    
+    public var sha384: String {
+        return self.string(.sha384)
+    }
+    
+    public var sha512: String {
+        return self.string(.sha512)
+    }
+    
+    public var md5: String {
+        return self.string(.md5)
+    }
+    
+    public func hmac(_ algorithm: CryptoAlgorithm, key: String) -> String {
+        let string = cString(using: .utf8)
+        let stringLength = Int(lengthOfBytes(using: .utf8))
+        let keyString = key.cString(using: .utf8)
+        let keyLength = Int(key.lengthOfBytes(using: .utf8))
+        let result = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: algorithm.digestLength)
+        CCHmac(algorithm.hmacAlgorithm, keyString!, keyLength, string!, stringLength, result)
+        return self.stringFromResult(result: result, length: algorithm.digestLength)
+    }
+    
+    private func string(_ algorithm: CryptoAlgorithm) -> String {
+        let string = cString(using: .utf8)
+        let stringLength = CC_LONG(lengthOfBytes(using: .utf8))
+        let result = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: algorithm.digestLength)
+        switch algorithm {
+        case .sha1:
+            CC_SHA1(string, stringLength, result)
+        case.sha224:
+            CC_SHA224(string, stringLength, result)
+        case .sha256:
+            CC_SHA256(string, stringLength, result)
+        case .sha384:
+            CC_SHA384(string, stringLength, result)
+        case .sha512:
+            CC_SHA512(string, stringLength, result)
+        case .md5:
+            CC_MD5(string, stringLength, result)
+        }
+        return self.stringFromResult(result: result, length: algorithm.digestLength)
+    }
+    
+    private func stringFromResult(result: UnsafeMutablePointer<CUnsignedChar>, length: Int) -> String {
+        var hash = String()
+        for i in 0 ..< length {
+            let obcStrl = String.init(format: "%02x", result[i])
+            hash.append(obcStrl)
+        }
+        return String(hash).lowercased()
+    }
+
+}
+
+#endif

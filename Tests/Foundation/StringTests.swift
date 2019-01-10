@@ -504,4 +504,22 @@ class StringTests: XCTestCase {
         XCTAssertEqual(string, nsString)
     }
     
+    
+    func testCryptoAlgorithm() {
+        let string = "123456"
+        let addString = "56789"
+        XCTAssertEqual(string.sha1, "7c4a8d09ca3762af61e59520943dc26494f8941b")
+        XCTAssertEqual(string.sha224, "f8cdb04495ded47615258f9dc6a3f4707fd2405434fefc3cbf4ef4e6")
+        XCTAssertEqual(string.sha256, "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92")
+        XCTAssertEqual(string.sha384, "0a989ebc4a77b56a6e2bb7b19d995d185ce44090c13e2984b7ecc6d446d4b61ea9991b76a4c2f04b1b4d244841449454")
+        XCTAssertEqual(string.sha512, "ba3253876aed6bc22d4a6ff53d8406c6ad864195ed144ab5c87621b6c233b548baeae6956df346ec8c17f5ea10f35ee3cbc514797ed7ddd3145464e2a0bab413")
+        XCTAssertEqual(string.md5, "e10adc3949ba59abbe56e057f20f883e")
+
+        XCTAssertEqual(string.hmac(.sha1, key: addString), "00b5f91295d6b9dc9513fa7d5a860385524095a9")
+        XCTAssertEqual(string.hmac(.sha224, key: addString), "bd839baf51e91e31bca965d9f43c13b991dc3445e0309489287c2e88")
+        XCTAssertEqual(string.hmac(.sha256, key: addString), "23cb6d4922ce2d8495d57ba6b3dc2ec4ff87282b13a3f71d5746656516260a8d")
+        XCTAssertEqual(string.hmac(.sha384, key: addString), "684d4d43a98a2443c4806343e1237399e2b8289d6100ba1418694893be102fbae1e3c1f270a22736239f716a12681520")
+        XCTAssertEqual(string.hmac(.sha512, key: addString), "14587c7e074eb67f89dd66a0d57ecfde671eaf738303b96f814e2acc6aec4ef1f39cae87333597cf06016d93dc35053fecbe0810080dceb4aae918c26c266c09")
+        XCTAssertEqual(string.hmac(.md5, key: addString), "449e1de7b64474adff24b02981788909")
+    }
 }
